@@ -1,5 +1,5 @@
 import {GET_HISTORY, LOADING} from '../actionTypes';
-import {storeData, getData, clearHistory, find} from '../utils';
+import {storeData, getData, find} from '../utils';
 
 export const addHistory = data => async dispatch => {
   // clearHistory('history');

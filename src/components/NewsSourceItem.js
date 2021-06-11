@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
+import styles from './styles';
 
 export default class NewsSourceItem extends Component {
   goToSourcePage = () => {
@@ -11,7 +12,7 @@ export default class NewsSourceItem extends Component {
 
   render() {
     return (
-      <TouchableOpacity onPress={this.goToSourcePage} style={{padding: 10}}>
+      <TouchableOpacity onPress={this.goToSourcePage} style={styles.pten}>
         <Text>{this.props.source.name}</Text>
         {/* <Text>{this.props.source.id}</Text> */}
         <Text>{this.props.source.description}</Text>

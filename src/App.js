@@ -10,7 +10,7 @@ import NewsHistory from './components/NewsHistory';
 import NewsSource from './components/NewsSource';
 import NewsDetails from './components/NewsDetails';
 import SourcePage from './components/SourcePage';
-import {StatusBar} from 'react-native';
+// import {StatusBar} from 'react-native';
 
 import {Provider} from 'react-redux';
 import store from './store';

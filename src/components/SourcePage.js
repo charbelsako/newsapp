@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, ScrollView} from 'react-native';
+import {ScrollView} from 'react-native';
 import axios from 'axios';
 import NewsCard from './NewsCard';
 
@@ -24,15 +24,13 @@ export default class SourcePage extends Component {
   render() {
     return (
       <ScrollView>
-        <Text>
-          {this.state.articles.map((article, index) => (
-            <NewsCard
-              news={article}
-              navigation={this.props.navigation}
-              key={index}
-            />
-          ))}
-        </Text>
+        {this.state.articles.map((article, index) => (
+          <NewsCard
+            news={article}
+            navigation={this.props.navigation}
+            key={index}
+          />
+        ))}
       </ScrollView>
     );
   }

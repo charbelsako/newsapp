@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {Text, Image, TouchableOpacity} from 'react-native';
 import moment from 'moment';
+import styles from './styles';
 
 export default class NewsCard extends Component {
   constructor(props) {
@@ -17,11 +18,11 @@ export default class NewsCard extends Component {
   render() {
     // return <Text>{this.props.news.source.name}</Text>;
     return (
-      <TouchableOpacity style={{padding: 10}} onPress={this.onPress}>
-        <Text style={{width: '100%'}}> {this.props.news.title} </Text>
+      <TouchableOpacity style={styles.pten} onPress={this.onPress}>
+        <Text style={styles.wfull}> {this.props.news.title} </Text>
         <Image
           source={{uri: this.props.news.urlToImage}}
-          style={{width: '100%', height: 200}}
+          style={styles.thumbnail}
         />
         <Text>
           {moment(this.props.news.publishedAt).format(
@@ -31,15 +32,7 @@ export default class NewsCard extends Component {
         {this.props.news.source ? (
           <Text>{this.props.news.source.name}</Text>
         ) : null}
-        <Text
-          style={{
-            height: 55,
-            width: 380,
-            padding: 10,
-            overflow: 'hidden',
-          }}>
-          {this.props.news.content}
-        </Text>
+        <Text style={styles.contentText}>{this.props.news.content}</Text>
         {this.props.news.lastAccessed && (
           <Text>
             Last Accessed:{' '}
