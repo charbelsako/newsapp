@@ -13,14 +13,8 @@ class NewsDetails extends Component {
   }
 
   render() {
-    const {
-      title,
-      source,
-      author,
-      content,
-      publishedAt,
-      urlToImage,
-    } = this.props.route.params.news;
+    const {title, source, author, content, publishedAt, urlToImage} =
+      this.props.route.params.news;
     return (
       <View style={{padding: 5}}>
         <Text style={{marginBottom: 20, padding: 5}}> {title} </Text>

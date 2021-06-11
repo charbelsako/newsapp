@@ -1,7 +1,8 @@
-import {GET_HISTORY} from '../actionTypes';
+import {GET_HISTORY, LOADING} from '../actionTypes';
 
 const initialState = {
   history: ['hello'],
+  loading: false,
 };
 
 export default function (state = initialState, action) {
@@ -10,6 +11,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         history: [...action.payload],
+        loading: false,
+      };
+    case LOADING:
+      return {
+        ...state,
+        loading: true,
       };
     // case ADD_HISTORY:
     //   return {

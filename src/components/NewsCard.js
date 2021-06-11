@@ -18,7 +18,7 @@ export default class NewsCard extends Component {
     // return <Text>{this.props.news.source.name}</Text>;
     return (
       <TouchableOpacity style={{padding: 10}} onPress={this.onPress}>
-        <Text style={{width: 380}}> {this.props.news.title} </Text>
+        <Text style={{width: '100%'}}> {this.props.news.title} </Text>
         <Image
           source={{uri: this.props.news.urlToImage}}
           style={{width: '100%', height: 200}}
@@ -28,7 +28,9 @@ export default class NewsCard extends Component {
             'MMMM Do YYYY, h:mm:ss a',
           )}
         </Text>
-        <Text>{this.props.news.source.name}</Text>
+        {this.props.news.source ? (
+          <Text>{this.props.news.source.name}</Text>
+        ) : null}
         <Text
           style={{
             height: 55,

@@ -1,14 +1,15 @@
-import {GET_HISTORY} from '../actionTypes';
+import {GET_HISTORY, LOADING} from '../actionTypes';
 import {storeData, getData, clearHistory, find} from '../utils';
 
 export const addHistory = data => async dispatch => {
+  // clearHistory('history');
   // add page to local Storage
   // get history from async storage.
   try {
     let history = await getData('history');
     if (history) {
       let index = find(data, history);
-      if (index) {
+      if (index !== -1) {
         console.log('found index');
         history.splice(index, 1);
       }
@@ -23,8 +24,10 @@ export const addHistory = data => async dispatch => {
 };
 
 export const getHistory = () => async dispatch => {
+  dispatch({type: LOADING, payload: null});
   // load the history into memory from localstorage
   let data = await getData('history');
+  console.log(data);
   if (data === null) {
     data = [];
   }

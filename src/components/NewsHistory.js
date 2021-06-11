@@ -20,6 +20,9 @@ class NewsHistory extends Component {
   }
 
   render() {
+    if (this.props.history.loading) {
+      return <Text>Loading</Text>;
+    }
     return (
       <ScrollView>
         {this.props.history.map((article, index) => (
